@@ -1,8 +1,8 @@
 class Mcmobsheet < Formula
   desc "Translate Minecraft /summon and /setblock data into readable info"
   homepage "https://github.com/chrisjniles/mcmobsheet"
-  url "https://github.com/chrisjniles/mcmobsheet/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "6585e62bc8c6cb738bdb4d118776d078f2278b46859451494d3381807283e445"
+  url "https://github.com/chrisjniles/mcmobsheet/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "e196c3937c1379fc69afa305ed4f3dadc8e026c91bd251aaad5b775b647e8397"
   license "GPL-3.0-or-later"
 
   # mcmobsheet has zero Python runtime dependencies, so rather than pulling in
