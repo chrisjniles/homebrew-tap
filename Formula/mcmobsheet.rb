@@ -1,8 +1,8 @@
 class Mcmobsheet < Formula
   desc "Translate Minecraft /summon and /setblock data into readable info"
   homepage "https://github.com/chrisjniles/mcmobsheet"
-  url "https://github.com/chrisjniles/mcmobsheet/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "0aab1b28bf3273f67724415c5c739cd230cbd5895f6fd32a70747138cbcb82c6"
+  url "https://github.com/chrisjniles/mcmobsheet/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "6585e62bc8c6cb738bdb4d118776d078f2278b46859451494d3381807283e445"
   license "GPL-3.0-or-later"
 
   # mcmobsheet has zero Python runtime dependencies, so rather than pulling in
@@ -67,11 +67,13 @@ class Mcmobsheet < Formula
     system libexec/"bin/pip", "install", buildpath
 
     bin.install_symlink libexec/"bin/mcmobsheet"
+    man1.install "man/mcmobsheet.1"
   end
 
   test do
     output = shell_output("#{bin}/mcmobsheet '/summon minecraft:donkey 0 64 0 {CustomName: \"Test\"}'")
     assert_match "Donkey", output
     assert_match "Location: 0, 64, 0", output
+    assert_path_exists man1/"mcmobsheet.1"
   end
 end
